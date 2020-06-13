@@ -1,8 +1,9 @@
-import { Test } from '../models/Test.ts';
+import { Test } from "../models/Test.ts";
+import { Context } from "https://deno.land/x/oak/mod.ts";
 
 class TestController {
-  async get(ctx: any) {
-    const test: Test = { message: 'Ok' }
+  async get(ctx: Context) {
+    const test: Test = { message: "Ok" };
     ctx.response.body = test;
   }
 }
