@@ -7,7 +7,7 @@ const app = new Application();
 
 app.use(router.routes());
 
-const ADDRESS = config().ADDRESS || 'localhost';
+const ADDRESS = config().ADDRESS || "localhost";
 const PORT = config().PORT || 3333;
 
 app.listen(`${ADDRESS}:${PORT}`);
