@@ -5,6 +5,7 @@ class TestController {
   async get(ctx: Context) {
     const test: Test = { message: "Ok" };
     ctx.response.body = test;
+    ctx.response.status = 200;
   }
 }
 
