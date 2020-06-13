@@ -1,4 +1,8 @@
-import { BenchmarkTimer, bench, runBenchmarks } from "https://deno.land/std/testing/bench.ts";
+import {
+  BenchmarkTimer,
+  bench,
+  runBenchmarks,
+} from "https://deno.land/std/testing/bench.ts";
 
 bench(function forIncrementX1e9(b: BenchmarkTimer): void {
   b.start();
