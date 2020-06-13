@@ -1,5 +1,8 @@
-import { assertEquals, assertNotEquals } from "https://deno.land/std/testing/asserts.ts";
-import { getMessageFromMock } from '../controllers/test.ts';
+import {
+  assertEquals,
+  assertNotEquals,
+} from "https://deno.land/std/testing/asserts.ts";
+import { getMessageFromMock } from "../controllers/test.ts";
 
 Deno.test({
   name: "is Equal 'Ok'",

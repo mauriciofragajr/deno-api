@@ -2,8 +2,8 @@ import { Test } from "../models/Test.ts";
 import { Context } from "https://deno.land/x/oak/mod.ts";
 
 export const getMessageFromMock = () => {
-  return "Ok"
-}
+  return "Ok";
+};
 
 class TestController {
   async get(ctx: Context) {
