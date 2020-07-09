@@ -1,16 +1,18 @@
+FROM hayd/alpine-deno:1.1.3
 
-FROM debian:jessie-slim
+EXPOSE 3000
 
-ARG DENO_VERSION
+WORKDIR /app
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    curl \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/* \
-    && curl -fsSLO --compressed "https://github.com/denoland/deno/releases/download/$DENO_VERSION/deno_linux_x64.gz" \
-    && gunzip -c deno_linux_x64.gz > /usr/local/bin/deno \
-    && chmod u+x /usr/local/bin/deno \
-    && rm deno_linux_x64.gz 
+USER deno
 
-CMD [ "deno" ]
+ENV PORT=3000
+ENV ADDRESS=localhost
+
+# COPY deps.ts .
+# RUN deno cache deps.ts
+
+ADD . .
+RUN deno cache src/index.ts
+
+CMD ["run", "--allow-net", "--allow-read", "src/index.ts"]
