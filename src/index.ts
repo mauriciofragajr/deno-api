@@ -4,7 +4,7 @@ import { config } from "https://deno.land/x/dotenv/mod.ts";
 import router from "./routes.ts";
 
 const ADDRESS = config().ADDRESS || "localhost";
-const PORT = config().PORT || 3000;
+const PORT = config().PORT || 1993;
 
 const app = new Application();
 

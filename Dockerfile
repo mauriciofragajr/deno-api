@@ -1,12 +1,12 @@
 FROM hayd/alpine-deno:1.1.3
 
-EXPOSE 3000
+EXPOSE 1993
 
 WORKDIR /app
 
 USER deno
 
-ENV PORT=3000
+ENV PORT=1993
 ENV ADDRESS=localhost
 
 # COPY deps.ts .
